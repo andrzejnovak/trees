@@ -1,0 +1,30 @@
+#!/bin/bash
+
+for var in  0
+do
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-700Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-700Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_111742/" 
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-1200Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-1200Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112021/" 
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-900Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-900Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112139/" 
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112259/" 
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_RH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_RH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112420/" 
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Wid_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Wid_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112541/" 
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1500Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1500Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112702/" 
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Wid_MTp-1200Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Wid_MTp-1200Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112825/" 
+
+python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1500Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1500Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_113102/" 
+
+
+#python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-900Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-900Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_111901/0000/" -c ""
+
+#python PileUpCalc.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1200Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1200Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112941/0000/" -c ""
+
+done
+

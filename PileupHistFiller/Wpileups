@@ -1,0 +1,24 @@
+#!/bin/bash
+
+for var in  0
+do
+
+python PileUpCalc.py -n "WJetsToLNu_HT-100To200" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/160806_235511/" 
+
+python PileUpCalc.py -n "WJetsToLNu_HT-200To400" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235632/" 
+
+python PileUpCalc.py -n "WJetsToLNu_HT-400To600" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235755/" 
+
+python PileUpCalc.py -n "WJetsToLNu_HT-1200To2500" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/160807_000159/" 
+
+python PileUpCalc.py -n "WJetsToLNu_HT-600To800" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235917/"
+
+python PileUpCalc.py -n "WJetsToLNu_HT-800To1200" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v2/160807_000038/" 
+
+python PileUpCalc.py -n "WJetsToLNu_HT-2500ToInf" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160807_000322/" 
+
+python PileUpCalc.py -n "WJetsToQQ" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToQQ_HT180_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160807_000443/" 
+
+
+done
+

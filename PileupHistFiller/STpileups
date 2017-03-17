@@ -1,0 +1,18 @@
+#!/bin/bash
+
+for var in  0
+do
+
+python PileUpCalc.py -n "ST_s" -f "/eos/uscms/store/user/osherson/80XTrees/st_s/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234014/"
+
+python PileUpCalc.py -n "ST_t" -f  "/eos/uscms/store/user/osherson/80XTrees/st_t/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234138/"
+
+python PileUpCalc.py -n "ST_at" -f "/eos/uscms/store/user/osherson/80XTrees/st_at/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234259/"
+
+python PileUpCalc.py -n "ST_tW" -f "/eos/uscms/store/user/osherson/80XTrees/st_tW/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v2/160806_234421/"
+
+python PileUpCalc.py -n "ST_atW" -f "/eos/uscms/store/user/osherson/80XTrees/st_atW/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234543/"
+
+
+done
+
