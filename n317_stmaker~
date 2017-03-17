@@ -1,0 +1,27 @@
+#!/bin/bash
+
+declare -r saveto="/uscms_data/d3/anovak/ZprimeTrees/mc/"
+
+for var in 1
+ 
+do
+
+python Zp_tTp_Treemaker_Config.py -n "ST_t" -f "/eos/uscms/store/user/osherson/80XTrees/st_t/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234138/0000/" -p "PileupHistFiller/PU_weights_ST_t.root" -x "136.02" -c ".root" -s $saveto |& tee -a outputST.txt
+
+
+python Zp_tTp_Treemaker_Config.py -n "ST_at" -f "/eos/uscms/store/user/osherson/80XTrees/st_at/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234259/0000/" -p "PileupHistFiller/PU_weights_ST_at.root" -x "80.95" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputST.txt
+
+
+python Zp_tTp_Treemaker_Config.py -n "ST_s" -f "/eos/uscms/store/user/osherson/80XTrees/st_s/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234014/0000/" -p "PileupHistFiller/PU_weights_ST_s.root" -x "3.36" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputST.txt
+
+
+python Zp_tTp_Treemaker_Config.py -n "ST_tW" -f "/eos/uscms/store/user/osherson/80XTrees/st_tW/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v2/160806_234421/0000/" -p "PileupHistFiller/PU_weights_ST_tW.root" -x "71.7*0.5" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputST.txt
+
+
+python Zp_tTp_Treemaker_Config.py -n "ST_atW" -f "/eos/uscms/store/user/osherson/80XTrees/st_atW/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234543/0000/" -p "PileupHistFiller/PU_weights_ST_atW.root" -x "71.7*0.5" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputST.txt
+
+echo "Done"
+
+done
+
+
