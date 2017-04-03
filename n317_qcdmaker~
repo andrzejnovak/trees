@@ -3,7 +3,7 @@
 for var in 1 #3 4 5 6 7 8 10 11
 do
 					
-python Zp_tTp_Treemaker_Config.py -n "QCD_HT300to500" -f "/eos/uscms/store/user/anovak/QCD/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234704/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "347700" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputQCD.txt
+python Zp_tTp_Treemaker_Config.py -n "QCD_HT300to500" -f "/eos/uscms/store/user/anovak/QCD/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234704/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "347700" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputQCD.txt &
 
 
 python Zp_tTp_Treemaker_Config.py -n "QCD_HT500to700" -f "/eos/uscms/store/user/anovak/QCD/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_234825/0000/" -p "PileupHistFiller/PU_weights_QCD_HT500to700.root" -x "32100" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/"  |& tee -a outputQCD.txt

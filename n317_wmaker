@@ -3,27 +3,27 @@
 for var in 0
 do
 
-python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-100To200" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/160806_235511/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-100To200.root" -x "1345*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/"  |& tee -a outputW.txt
+#python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-100To200" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/160806_235511/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-100To200.root" -x "1345*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/"  |& tee -a outputW.txt &
 
-python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-200To400" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235632/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-200To400.root" -x "359.7*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt
-
-
-python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-400To600" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235755/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-400To600.root" -x "48.91*1.21" -c ""  -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt
+#python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-200To400" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235632/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-200To400.root" -x "359.7*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt &
 
 
-python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-600To800" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235917/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-600To800.root" -x "12.05*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt
+#python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-400To600" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235755/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-400To600.root" -x "48.91*1.21" -c ""  -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt &
 
 
-python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-800To1200" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v2/160807_000038/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-800To1200.root" -x "5.501*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt
+#python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-600To800" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160806_235917/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-600To800.root" -x "12.05*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt &
 
 
-python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-1200To2500" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/160807_000159/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-1200To2500.root" -x "1.329*1.21" -c "" "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt
+#python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-800To1200" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v2/160807_000038/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-800To1200.root" -x "5.501*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt &
 
 
-python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-2500ToInf" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160807_000322/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-2500ToInf.root" -x "0.03216*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt
+python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-1200To2500" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/160807_000159/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-1200To2500.root" -x "1.329*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt &
 
 
-python Zp_tTp_Treemaker_Config.py -n "WJetsToQQ" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToQQ_HT180_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160807_000443/0000/" -p "PileupHistFiller/PU_weights_WJetsToQQ.root" -x "2788" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/"|& tee -a outputW.txt
+#python Zp_tTp_Treemaker_Config.py -n "WJetsToLNu_HT-2500ToInf" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160807_000322/0000/" -p "PileupHistFiller/PU_weights_WJetsToLNu_HT-2500ToInf.root" -x "0.03216*1.21" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/" |& tee -a outputW.txt &
+
+
+#python Zp_tTp_Treemaker_Config.py -n "WJetsToQQ" -f "/eos/uscms/store/user/anovak/Wjets/WJetsToQQ_HT180_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160807_000443/0000/" -p "PileupHistFiller/PU_weights_WJetsToQQ.root" -x "2788" -c "" -s "/uscms_data/d3/anovak/ZprimeTrees/mc/"|& tee -a outputW.txt &
 
 
 done

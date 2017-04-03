@@ -7,21 +7,21 @@ echo "Processing" |& tee -a outputtriggers.txt
 
 ### Electrons
 
-python Zp_tTp_Treemaker_Config.py -n "SEB0" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleElectron/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016B-PromptReco-v2/160806_231657/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  |& tee -a outputtriggers.txt
+python Zp_tTp_Treemaker_Config.py -n "SEB0" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleElectron/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016B-PromptReco-v2/160806_231657/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/" -d |& tee -a outputdata.txt &
 
-python Zp_tTp_Treemaker_Config.py -n "SEB1" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleElectron/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016B-PromptReco-v2/160806_231657/0001/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root"-w "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  |& tee -a outputtriggers.txt
+python Zp_tTp_Treemaker_Config.py -n "SEB1" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleElectron/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016B-PromptReco-v2/160806_231657/0001/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root"-x "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  -d |& tee -a outputdata.txt &
 
-python Zp_tTp_Treemaker_Config.py -n "SEC" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleElectron/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016C-PromptReco-v2/160806_231820/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -w "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  |& tee -a outputtriggers.txt
+#python Zp_tTp_Treemaker_Config.py -n "SEC" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleElectron/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016C-PromptReco-v2/160806_231820/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/" -d |& tee -a outputdata.txt &
 
-python Zp_tTp_Treemaker_Config.py -n "SED" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleElectron/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016D-PromptReco-v2/160806_231943/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -w "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  |& tee -a outputtriggers.txt
+#python Zp_tTp_Treemaker_Config.py -n "SED" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleElectron/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016D-PromptReco-v2/160806_231943/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  -d |& tee -a outputdata.txt &
 
 ### Muons
 
-python Zp_tTp_Treemaker_Config.py -n "SMB" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleMuon/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016B-PromptReco-v2/160806_232108/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -w "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  |& tee -a outputtriggers.txt
+#python Zp_tTp_Treemaker_Config.py -n "SMB" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleMuon/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016B-PromptReco-v2/160806_232108/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/" -d |& tee -a outputdata.txt &
 
-python Zp_tTp_Treemaker_Config.py -n "SMC" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleMuon/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016C-PromptReco-v2/160806_232230/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -w "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  |& tee -a outputtriggers.txt
+#python Zp_tTp_Treemaker_Config.py -n "SMC" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleMuon/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016C-PromptReco-v2/160806_232230/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/" -d |& tee -a outputdata.txt &
 
-python Zp_tTp_Treemaker_Config.py -n "SMD" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleMuon/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016D-PromptReco-v2/160806_232352/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -w "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/"  |& tee -a outputtriggers.txt
+#python Zp_tTp_Treemaker_Config.py -n "SMD" -f "/uscms_data/d3/dfehling/sl6/for_marc/CMSSW_8_0_14/src/SingleMuon/B2GAnaFW_80X_V2p0_PR53_Aug06_Run2016D-PromptReco-v2/160806_232352/0000/" -p "PileupHistFiller/PU_weights_QCD_HT300to500.root" -x "1" -c ".root" -s "/uscms_data/d3/anovak/ZprimeTrees/data/" -d |& tee -a outputdata.txt &
 
 echo "Completed" |& tee -a outputtriggers.txt
 

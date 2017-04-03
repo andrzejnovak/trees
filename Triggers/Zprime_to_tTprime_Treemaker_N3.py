@@ -6,7 +6,6 @@ from array import array
 import math
 from math import *
 import sys
-import timeit
 
 def MakeW(met, lep): #both should be TLor vectors.
 	newmet = ROOT.TLorentzVector()
@@ -34,25 +33,21 @@ def MakeW(met, lep): #both should be TLor vectors.
 		newmet_m.SetE(math.sqrt(newmet_m.Px()*newmet_m.Px()+newmet_m.Py()*newmet_m.Py()+newmet_m.Pz()*newmet_m.Pz()))
 		return newmet_p+lep
 
-
 class Zp_tTp_Treemaker:
-	def __init__(self, name, TreeFolder, mc, xs, choose, PU, saveto): # Initialize: mc is an important option and data will crash if run with it. Weight should be xs/NevtGen.
+	def __init__(self, name, TreeFolder, mc, tt, weight, choose, PU, saveto): # Initialize: mc is an important option and data will crash if run with it. Weight should be xs/NevtGen.
 		self.mc = mc
+		self.tt = tt
 		self.name = name
-		self.xs = xs
+		self.w = weight
 		self.saveto = saveto
 		self.files = []
 		self.TF = TreeFolder
 		self.puf = ROOT.TFile(PU)
-		self.totweight = self.puf.WeightHist.GetEntries()
-		if self.mc == True: self.w = self.xs/float(self.totweight)
-		else: self.w = 1.
-		print self.w
 		self.puf_n = self.puf.Get("nom_weight")
 		self.puf_u = self.puf.Get("up_weight")
 		self.puf_d = self.puf.Get("down_weight")
 		self.sadnumber = 0
-		if self.mc:
+		if self.mc or self.tt:
 			# Set up b-tag Calibrations:
 			self.BTagCalib = BTagCalibration("csvv2", "CSVv2_ichep.csv")
 			# Central
@@ -78,15 +73,15 @@ class Zp_tTp_Treemaker:
 			self.BTagCalib_mediumLd.load(self.BTagCalib, 2, "incl")
 		if self.mc:
 			self.MuTrigFile = TFile("SingleMuonTrigger_Z_RunBCD_prompt80X_7p65.root")
-			self.MuTrigHist1 = self.MuTrigFile.Get("Mu50_PtEtaBins_Run273158_to_274093/efficienciesDATA/abseta_pt_DATA")
-			self.MuTrigHist2 = self.MuTrigFile.Get("Mu50_PtEtaBins_Run274094_to_274953/efficienciesDATA/abseta_pt_DATA")
+			self.MuTrigHist1 = self.MuTrigFile.Get("Mu45_eta2p1_PtEtaBins_Run273158_to_274093/efficienciesDATA/abseta_pt_DATA")
+			self.MuTrigHist2 = self.MuTrigFile.Get("Mu45_eta2p1_PtEtaBins_Run274094_to_276097/efficienciesDATA/abseta_pt_DATA")
 			self.MuIDFile = TFile("MuonID_Z_RunBCD_prompt80X_7p65.root")
 			self.MuIDHist = self.MuIDFile.Get("MC_NUM_TightIDandIPCut_DEN_genTracks_PAR_pt_spliteta_bin1/abseta_pt_ratio")
 			self.ElIDFile = TFile("egammaEffi.txt_SF2D.root")
 			self.ElIDHist = self.ElIDFile.Get("EGamma_SF2D")
 		#print "Files in " + self.TF + " :"
 		for file in os.listdir(self.TF):
-			if file.endswith(choose+".root"): # select files, allows you to select a subset of files for running on very large directories
+			if file.endswith(choose): # select files, allows you to select a subset of files for running on very large directories
 				self.files.append(file)
 				##print(file)
 		#print self.files
@@ -97,7 +92,7 @@ class Zp_tTp_Treemaker:
 
 		self.f = ROOT.TFile(self.saveto + self.name + ".root", "recreate" )
         	self.f.cd()
-		# Two main trees: one for each channel"t
+		# Two main trees: one for each channel"\
 		self.CutHist = TH1F("CutHist", "", 10, 0, 10)
 		self.tree1 = ROOT.TTree("tree_T1", "tree_T1")
 		self.tree2 = ROOT.TTree("tree_T2", "tree_T2")
@@ -195,15 +190,7 @@ class Zp_tTp_Treemaker:
 		#
 		self.Zp2M = array('f', [0.0])
 		self.addBranch('ZPRIMEM', self.Zp2M, self.tree2)
-		#	
-		self.HLT_Mu50 = array('f', [0.0])
-		self.addBranch('HLT_Mu50', self.HLT_Mu50, self.tree1)
-		self.addBranch('HLT_Mu50', self.HLT_Mu50, self.tree2)
-		#
-		self.HLT_Ele32_eta2p1_WPTight_Gsf = array('f', [0.0])
-		self.addBranch('HLT_Ele32_eta2p1_WPTight_Gsf', self.HLT_Ele32_eta2p1_WPTight_Gsf, self.tree1)
-		self.addBranch('HLT_Ele32_eta2p1_WPTight_Gsf', self.HLT_Ele32_eta2p1_WPTight_Gsf, self.tree2)
-		if self.mc:
+		if self.mc or self.tt:
 			# Inert SFs:
 			self.topSF = array('f', [0.0])
 			self.addBranch('topSF', self.topSF, self.tree1)
@@ -541,29 +528,30 @@ class Zp_tTp_Treemaker:
 				self.addBranch('lepTopM', self.TopMjesD, self.tree2jesD)
 				self.Zp2MjesD = array('f', [0.0])
 				self.addBranch('ZPRIMEM', self.Zp2MjesD, self.tree2jesD)
-			
+			if self.tt:
+				self.ttHT = array('f', [0.0])
+				self.addBranch('ttHT', self.ttHT, self.tree1)
+				self.addBranch('ttHT', self.ttHT, self.tree2)
 	def Fill(self, TreeName): # Loop through events and fill them. Actual Fill step is done at the end, allowing us to make a few quality control cuts.
 		total = 0
-		print "Filling..."
-		start_time = timeit.default_timer()
-		for en, i in enumerate(self.files):
+		print "filling..."
+		for i in self.files:
+			print "Reading from " + i
 			File = TFile("root://cmsxrootd.fnal.gov/"+self.TF  + "/" +i)
 			self.Tree = File.Get(TreeName)
 			n = self.Tree.GetEntries()
 			total += n-1
-			if en%2 == 0 or en == 1:	
-				lapsed = timeit.default_timer()-start_time
-				estimate = lapsed/(en+1)*len(self.files)
-				left = 	round((estimate-lapsed)/60.)
-				#print "File: "+str(en)+"/"+str(len(self.files)) +"    Time left: " + str(left)	
 			for j in range(0, n): # Here is where we loop over all events.
-				if j % 10000 == 0:
+				if j % 50000 == 0 or j == 1:
 	      				percentDone = float(j) / float(n) * 100.0
-	       				#print 'Processing {0:10.0f}/{1:10.0f} : {2:5.2f} %'.format(j, n, percentDone ), "File: "+str(en)+"/"+str(len(self.files)) +"    Time left: " + str(left)
-	       				print self.name,"  File:",str(en)+"/"+str(len(self.files)), "-", round(percentDone,2),"%"+"  Time left: " + str(left)
+	       				print 'Processing {0:10.0f}/{1:10.0f} : {2:5.2f} %'.format(j, n, percentDone )
 				self.Tree.GetEntry(j)
+				#print "EVENT STARTED"
 				# Start finding variables and doing analysis things:
 				self.weight[0] = self.w
+				if self.tt:
+					print "DO TTBAR as MC"
+					
 				if self.mc:
 					#print "DOING MC"
 					if self.doLepPart(): # Fills in basic leptonic variables (same for MC and data)
@@ -625,7 +613,6 @@ class Zp_tTp_Treemaker:
 											self.FillVarAK8()
 											self.FillVar1AK4()
 											self.FillVar1Phys()
-											self.FillTrigger()
 											self.tree1.Fill()
 									if len(self.jetList) > 1:
 										if self.doType2Vars(): # We can now start to fill variables:
@@ -633,10 +620,8 @@ class Zp_tTp_Treemaker:
 											self.FillVarAK8()
 											self.FillVar2AK4()
 											self.FillVar2Phys()
-											self.FillTrigger()
 											self.tree2.Fill()
 			File.Close()
-			
 		self.f.cd()
 	        self.f.Write()
 	        self.f.Close()
@@ -870,9 +855,6 @@ class Zp_tTp_Treemaker:
 		self.TopM[0] = self.LEPTOP.M()
 		self.Tp2M[0] = self.TPRIME2.M()
 		self.Zp2M[0] = self.ZPRIME2.M()	
-	def FillTrigger(self):
-		self.HLT_Ele32_eta2p1_WPTight_Gsf[0] = self.Tree.HLT_Ele32_eta2p1_WPTight_Gsf
-		self.HLT_Mu50[0] = self.Tree.HLT_Mu50
 	def FillVar1AK4(self):
 		self.JLep1Pt[0] = self.jetList[0][0].Pt()
 		self.JLep1CSV[0] = self.Tree.jetAK4Puppi_CSVv2[self.jetList[0][1]]
@@ -923,11 +905,11 @@ class Zp_tTp_Treemaker:
 			#print "2D cut DRs are " + str(self.Tree.el_AK4JetV1DR[0]) + ", " + str(self.Tree.el_AK4JetV2DR[0]) + ", " + str(self.Tree.el_AK4JetV3DR[0])
 			#print "2D cut RelPtss are " + str(self.Tree.el_AK4JetV1PtRel[0]) + ", " + str(self.Tree.el_AK4JetV2PtRel[0]) + ", " + str(self.Tree.el_AK4JetV3PtRel[0])
 			if self.Lep2D_dr[0] > 5 or self.Lep2D_rel[0] > 1000:
-				#print "============================="
-				#print str(self.Lep2D_dr[0]) + " (DR)"
-				#print str(self.LEP.Pt()) + " (pT)"
-				#print str(self.LEP.Eta()) + " (eta)"
-				#print str(self.Lep2D_rel[0]) + " (rel)"
+				print "============================="
+				print str(self.Lep2D_dr[0]) + " (DR)"
+				print str(self.LEP.Pt()) + " (pT)"
+				print str(self.LEP.Eta()) + " (eta)"
+				print str(self.Lep2D_rel[0]) + " (rel)"
 				self.sadnumber += 1
 	def doType1Vars(self):
 		self.TPRIME1 = self.W + self.jetList[0][0] # make the T' candidate: no ambiguity for type 1 channel, the light jet must be the hardest jet (not including the AK8 jets)
@@ -1013,23 +995,31 @@ class Zp_tTp_Treemaker:
 				self.leptype = "el"
 		return self.FillLepton(self.leptype)
 	def FillLepton(self, leptype): # Cut leptons that don't have good pT or eta. Fill variables if they're ok.
-		if self.leptype == "mu" and self.Tree.mu_Pt[0] > 50. and self.Tree.mu_Pt[0] < 4000.:
+		"""		
+		if self.leptype == "mu" and self.Tree.mu_AK4JetV2DR[0] < 50. and self.Tree.mu_Pt[0] > 50 and self.Tree.mu_Pt[0] < 4000 and math.fabs(self.Tree.mu_Eta[0]) < 2.1:
 			self.LEP = ROOT.TLorentzVector() # we will be using this to store the kinematic information of the lepton
 			self.LEP.SetPtEtaPhiE(self.Tree.mu_Pt[0], self.Tree.mu_Eta[0], self.Tree.mu_Phi[0], self.Tree.mu_E[0])
 			return True
-		if self.leptype == "el" and self.Tree.el_Pt[0] > 32 and self.Tree.el_Pt[0] < 4000 and math.fabs(self.Tree.el_Eta[0]) < 2.1 and self.Tree.el_vidTight[0] > 0.:
+		if self.leptype == "el" and self.Tree.el_AK4JetV2DR[0] < 50. and self.Tree.el_Pt[0] > 50 and self.Tree.el_Pt[0] < 4000 and math.fabs(self.Tree.el_Eta[0]) < 2.1:
 			self.LEP = ROOT.TLorentzVector() # we will be using this to store the kinematic information of the lepton
 			self.LEP.SetPtEtaPhiE(self.Tree.el_Pt[0], self.Tree.el_Eta[0], self.Tree.el_Phi[0], self.Tree.el_E[0])
-			return True		
+			return True
+		"""
+		if self.leptype == "mu" and self.Tree.mu_Pt[0] > 45 and self.Tree.mu_Pt[0] < 4000 and math.fabs(self.Tree.mu_Eta[0]) < 2.1:
+			self.LEP = ROOT.TLorentzVector() # we will be using this to store the kinematic information of the lepton
+			self.LEP.SetPtEtaPhiE(self.Tree.mu_Pt[0], self.Tree.mu_Eta[0], self.Tree.mu_Phi[0], self.Tree.mu_E[0])
+			return True
+		if self.leptype == "el":
+			return False
 		return False
 	def doTrigger(self):
-		if self.Tree.HLT_Mu50 > 0.:
+		if self.Tree.HLT_Mu45_eta2p1 > 0 and not self.Tree.HLT_Ele45_CaloIdVT_GsfTrkIdT_PFJet200_PFJet50 > 0:
 			return True
-		if self.Tree.HLT_Ele32_eta2p1_WPTight_Gsf > 0.:
+		if self.Tree.HLT_Ele45_CaloIdVT_GsfTrkIdT_PFJet200_PFJet50 > 0 and not self.Tree.HLT_Mu45_eta2p1 > 0:
 			return True
 		return False
 	def __del__(self):
-	        print "done! " + str(self.sadnumber) +"failed"
+	        print "done! " + str(self.sadnumber)
 
 
 # NOTES:

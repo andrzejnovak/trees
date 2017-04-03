@@ -9,7 +9,7 @@ do
 	do
 	echo "Processing part $part" |& tee -a outputTT1.txt
 
-	python Zp_tTp_Treemaker_Config.py -n "TT1_$part" -f "/eos/uscms/store/user/osherson/80XTrees/ttbar/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext4-v1/160806_233846/0001/" -p "PileupHistFiller/PU_weights_TT.root" -w "831.76" -c "$part.root" -s "/eos/uscms/store/user/anovak/TriggerTesting/T$var/" -m "$var" |& tee -a outputTT1.txt
+	python Zp_tTp_Treemaker_Config.py -n "TT1_$part" -f "/eos/uscms/store/user/osherson/80XTrees/ttbar/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext4-v1/160806_233846/0001/" -p "PileupHistFiller/PU_weights_TT.root" -x "831.76" -c "$part.root" -s "/eos/uscms/store/user/anovak/TriggerTesting/T$var/" -m "$var" |& tee -a outputTT1.txt
 
 	echo "Completed processing part $part" |& tee -a outputTT1.txt
 	done

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+declare -x name=""
+
+for var in 1 #2 3 4 5 6 7 9 10 11
+
+do
+
+#python Zp_tTp_Treemaker_TEST.py -n "ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-700Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-700Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_111742/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-700Nar_LH_Tune.root" -w "1" -c "" |& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_TEST.py -n "ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-1200Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-1200Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112021/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-1200Nar_LH_Tune.root" -w "1" -c "" |& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_TEST.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-900Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-900Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112139/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-900Nar_LH_Tune.root" -w "1" -c "" |& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_Config.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_LH_Tune_T$var" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112259/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_LH_Tune.root" -w "1" -c ""  -s "/eos/uscms/store/user/anovak/TriggerTesting/signal/"  -m "$var" |& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_TEST.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_RH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_RH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112420/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Nar_RH_Tune.root" -w "1" -c "" |& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_TEST.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Wid_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Wid_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112541/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1200Wid_LH_Tune.root" -w "1" -c "" |& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_TEST.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1500Nar_LH_Tune" -f "eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1500Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112702/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-2000Nar_MTp-1500Nar_LH_Tune.root" -w "1" -c "" |& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_TEST.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2000Wid_MTp-1200Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2000Wid_MTp-1200Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112825/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-2000Wid_MTp-1200Nar_LH_Tune.root" -w "1" -c "" |& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_Config.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1500Nar_LH_Tune_T$var" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1500Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_113102/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1500Nar_LH_Tune.root" -w "1" -c "" -s "/eos/uscms/store/user/anovak/TriggerTesting/signal/"  -m "$var" |& tee -a outputSignal.txt
+
+
+python Zp_tTp_Treemaker_Config.py -n "ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-900Nar_LH_Tune_T$var" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-900Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_111901/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-1500Nar_MTp-900Nar_LH_Tune.root" -w "1" -c ""  -s "/eos/uscms/store/user/anovak/TriggerTesting/signal/"  -m "$var"|& tee -a outputSignal.txt
+
+#python Zp_tTp_Treemaker_TEST.py -n "ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1200Nar_LH_Tune" -f "/eos/uscms/store/user/anovak/Signal/ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1200Nar_LH_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/B2GAnaFW_80X_V2p0_PR53_Aug06_RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/160807_112941/0000/" -p "PileupHistFiller/PU_weights_ZprimeToTprimeT_TprimeToWB_MZp-2500Nar_MTp-1200Nar_LH_Tune.root" -w "1" -c "" |& tee -a outputSignal.txt
+
+
+done
+
